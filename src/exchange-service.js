@@ -18,8 +18,7 @@ export class Exchange {
     }
   }
 
-  async convert(response, currency){
-    let num = 10;
+  async convert(response, currency, num){
     let result = currency + ": ";
     let array = (Object.values(response));  
     array = (Object.entries(array[7]));
