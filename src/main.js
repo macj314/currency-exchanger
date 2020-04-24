@@ -22,8 +22,8 @@ $(document).ready(function() {
       if (response) {
         $('#output-display1').text("Currently Expecting a value of ~ 36.73 | " + convertNum);
       } else {
-        $('#error-display').text(`There was an error handling your request.`);
-        $('#error-display').text(`Please check your inputs and try again!`);
+        $('#error-display').append(`There was an error handling your request.`);
+        $('#error-display').append(`Please check your inputs and try again!`);
       }
     }
 
