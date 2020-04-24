@@ -8,7 +8,7 @@ $(document).ready(function() {
   let c;
   $('#btn-convert').click(function(event) {
     console.log("button press")
-    const currency = "ARS"
+    const currency = "AED"
     // const currency = $('#input-currency').val("");
     // $('#location').val("");
     event.preventDefault();
@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     function getElements(response, c) {
       if (response) {
-        $('#output-display1').text("Currently Expecting a value of 66.24 | " + c);
+        $('#output-display1').text("Currently Expecting a value of ~ 3.67 | " + c);
       } else {
         $('#error-display').text(`There was an error handling your request.`);
         $('#error-display').text(`Please check your inputs and try again!`);
