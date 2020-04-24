@@ -6,10 +6,11 @@ import $ from 'jquery';
 
 $(document).ready(function() {
 
-  $('#btn-convert').click(function() {
+  $('#btn-convert').click(function(event) {
+    console.log("button press")
     // const currency = 'USD';
     // $('#location').val("");
-
+    event.preventDefault();
     (async () => {
       let exchanger = new Exchange();
       const response = await exchanger.convert();
@@ -18,8 +19,7 @@ $(document).ready(function() {
 
     function getElements(response) {
       if (response) {
-        $('#output-display').text(`ayyy`);
-        // $('#output-display').text(`${currency} $ ${response.conversion_rates.USD}`);
+        $('#output-display').text(`${response.conversion_rates.AED}`);
       } else {
         $('#error-display').text(`There was an error handling your request.`);
         $('#error-display').text(`Please check your inputs and try again!`);
