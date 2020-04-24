@@ -18,7 +18,8 @@ $(document).ready(function() {
 
     function getElements(response) {
       if (response) {
-        $('#output-display').text(`${currency} $ ${response.conversion_rates.USD}`);
+        $('#output-display').text(`ayyy`);
+        // $('#output-display').text(`${currency} $ ${response.conversion_rates.USD}`);
       } else {
         $('#error-display').text(`There was an error handling your request.`);
         $('#error-display').text(`Please check your inputs and try again!`);
