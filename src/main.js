@@ -7,12 +7,12 @@ import $ from 'jquery';
 $(document).ready(function() {
 
   $('#btn-convert').click(function() {
-    const currency = 'USD';
+    // const currency = 'USD';
     // $('#location').val("");
 
     (async () => {
       let exchanger = new Exchange();
-      const response = await exchanger.convert(currency);
+      const response = await exchanger.convert();
       getElements(response);
     })();
 
