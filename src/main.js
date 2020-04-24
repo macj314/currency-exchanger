@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     function getElements(response, c) {
       if (response) {
-        $('#output-display1').text("Currently Expecting a value of ~ 3.67 | " + c);
+        $('#output-display1').text("Currently Expecting a value of ~ 36.73 | " + c);
       } else {
         $('#error-display').text(`There was an error handling your request.`);
         $('#error-display').text(`Please check your inputs and try again!`);
