@@ -1,6 +1,6 @@
 export class Exchange {
 
-  async convert() {
+  async request() {
     try {
       console.log("start convert()")
       let response = await fetch(`https://prime.exchangerate-api.com/v5//latest/USD`);
@@ -17,4 +17,10 @@ export class Exchange {
       return false;
     }
   }
+
+  async convert(response){
+   let AED = response.conversion_rates.AED;
+   return AED;
+  }
+
 }
