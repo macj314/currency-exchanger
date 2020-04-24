@@ -28,7 +28,9 @@ $(document).ready(function() {
     })();
 
     function getElements(response, convertNum) {
-      if (response) {
+      if(response && convertNum === false){
+        $('#output-display1').text("The currency you entered does not exist. Please enter one of the currency options listed above.");
+      } else if (response) {
         $('#output-display1').text("Currently Expecting a value of ~ 36.73 | " + convertNum);
       } else {
         $('#error-display').append(`There was an error handling your request.` + '<br />');

@@ -37,9 +37,6 @@ export class Exchange {
       }
       console.log(array);
       console.log(currency);
-      if(result === false){
-        result = "The entered currency doesn't exist. Please enter one of the available currencies listed at the top of the page.";
-      }
       return result;
     } catch(err) {
       $('#error-display' ).append(err + '<br />');
