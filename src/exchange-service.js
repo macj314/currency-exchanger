@@ -5,7 +5,6 @@ export class Exchange {
     try {
       console.log("start of request");
       let response = await fetch(`https://prime.exchangerate-api.com/v5//latest/USD`);
-      // let response = await fetch('http://dinoipsum.herokuapp.com/api/?format=json');
       let jsonifiedResponse;
       if (response.ok && response.status == 200) {
         jsonifiedResponse = await response.json();
@@ -38,12 +37,12 @@ export class Exchange {
       }
       console.log(array);
       console.log(currency);
+      if(result === false){
+        result = "The entered currency doesn't exist. Please enter one of the available currencies listed at the top of the page.";
+      }
       return result;
     } catch(err) {
       $('#error-display' ).append(err + '<br />');
-      if(isNaN(num) === true){
-        $('#error-display' ).append("Please only enter a number into the first field." + '<br />');
-      }
     }
   }  
 }

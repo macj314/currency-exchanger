@@ -6,19 +6,17 @@ import $ from 'jquery';
 
 $(document).ready(function() {
   $('#btn-convert').click(function(event) {
+    $('#error-display').text("");
     console.log("button press")
-    const inputNum = parseInt($('#input-number').val());
+    let inputNum = parseInt($('#input-number').val());
     const inputCurrency = $('#input-currency').val();
     event.preventDefault();
-    if (inputNum.length === 0){
-      $('#error-display').append(`Please enter a number into the first field.`);
-    } else if (isNaN(inputNum) === true && inputNum.length > 0){
-      $('#error-display').append(`Please only enter a number into the first field.`);
-    } else {
-      $('#input-display').text("You entered $" + inputNum);
+    if (isNaN(inputNum) === true){
+      inputNum = 1;
     }
+    $('#input-display').text("You entered $" + inputNum);
     if (inputCurrency.length === 0){
-      $('#error-display').append(`Please enter your desired currency conversion into the second field. A list of convertable currencies are listed above.`);
+      $('#error-display').append(`Please enter your desired currency conversion into the second field. A list of convertable currencies are listed above.` + '<br />');
     } else {
       $('#input-display').append(" and " + inputCurrency + " as your desired currency to convert to.");
     }
@@ -33,8 +31,8 @@ $(document).ready(function() {
       if (response) {
         $('#output-display1').text("Currently Expecting a value of ~ 36.73 | " + convertNum);
       } else {
-        $('#error-display').append(`There was an error handling your request.`);
-        $('#error-display').append(`Please check your inputs and try again!`);
+        $('#error-display').append(`There was an error handling your request.` + '<br />');
+        $('#error-display').append(`Please check your inputs and try again!` + '<br />');
       }
     }
 
