@@ -18,9 +18,23 @@ export class Exchange {
     }
   }
 
-  async convert(response){
-   let AED = response.conversion_rates.AED;
-   return AED;
+  async convert(response, currency){
+    let result;
+    let array = (Object.values(response));  
+    array = (Object.entries(array[7]));
+    for(let i = 1; i < array.length; i++){
+      for(let j = 0; j < 1; j++){
+        if (currency === array[i][j]){
+          result = array[i][j+1];
+          return result
+        } else {
+          result = 1;
+        }
+      }
+    }
+    console.log(array);
+    console.log(currency);
+    return result;
   }
 
 }
